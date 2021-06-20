@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+{% load static%}
+
+{% block content %}
+<head>
+    <style>
+        .box{
+            border:5px solid black;
+        }
+    </style>
+</head>
+<div class=" box jumbotron container">
+    <h2 style="padding-bottom: 20px;">Personal Details Of a Applicaints</h2>
+    <form action="" method="POST" enctype="multipart/form-data" required>
+        {% csrf_token %}
+        {{form.as_p}}
+         <a href="{% url 'applied' %}" class="btn btn-info btn-sm" type="submit">submit</a>  
+    </form>
+</div>
+{% endblock %}
